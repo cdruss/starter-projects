@@ -12,22 +12,22 @@ import org.springframework.core.env.Environment;
 @SpringBootApplication
 public class Application implements CommandLineRunner {
 
-	private static final Logger logger = LoggerFactory.getLogger(Application.class);
+    private static final Logger logger = LoggerFactory.getLogger(Application.class);
 
-	@Autowired
-	Environment environment;
+    @Autowired
+    Environment environment;
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
 
-	@Override
-	public void run(String... args) {
-		logger.trace("Application started, initialize client...");
+    @Override
+    public void run(String... args) {
+        logger.trace("Application started, initialize client....");
 
-		HelloWorldClient hwc = new HelloWorldClient();
-		logger.trace(hwc.getResult());
+        HelloWorldClient hwc = new HelloWorldClient();
+        logger.trace(hwc.getResult());
 
-		logger.trace("Listening on localhost:" + environment.getProperty("server.port"));
-	}
+        logger.trace("Listening on localhost:" + environment.getProperty("server.port"));
+    }
 }
