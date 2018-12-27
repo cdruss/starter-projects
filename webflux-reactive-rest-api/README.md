@@ -4,7 +4,7 @@
 
 This is a very basic example of a Reactive WebFlux endpoint listening on port 8090 (configured in resources/application.properties)
 
-Includes 2 very simple GET endpoints and WebClient for testing
+Includes 2 GET endpoints and WebClient for testing
 
 `` $ ./mvwn spring-boot:run  ``
 
