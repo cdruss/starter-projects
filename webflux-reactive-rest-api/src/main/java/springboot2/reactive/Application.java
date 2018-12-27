@@ -12,7 +12,7 @@ import org.springframework.core.env.Environment;
 @SpringBootApplication
 public class Application implements CommandLineRunner {
 
-    private static final Logger logger = LoggerFactory.getLogger(Application.class);
+    private static final Logger logger = LoggerFactory.getLogger("springboot2.reactive");
 
     @Autowired
     Environment environment;
