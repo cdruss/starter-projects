@@ -1,0 +1,43 @@
+# APP DEPLOYMENT
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: webflux-app
+  name: webflux-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: webflux-app-exposed
+  template:
+    metadata:
+      labels:
+        run: webflux-app-exposed
+    spec:
+      containers:
+      - image: techcoder21/webflux-reactive-rest-api:0.1.0
+        name: webflux-app
+        ports:
+        - containerPort: 8089
+          protocol: TCP
+
+---
+
+# APP SERVICE
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: webflux-app
+  name: webflux-app
+spec:
+  ports:
+  - port: 8089
+    protocol: TCP
+    targetPort: 8089
+  selector:
+    run: webflux-app-exposed
+  type: NodePort

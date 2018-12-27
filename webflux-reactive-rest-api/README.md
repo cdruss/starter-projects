@@ -55,7 +55,14 @@ A sample Dockerfile is included to build the app, its dependencies and the runti
 
 `` docker images ``
 
-`` docker rm {image_id} --force ``
+`` docker rmi {image_id} --force ``
+
+### Kubernetes
+
+`` kubectl create -f kubernetes/webflux-app.yml ``
+
+`` kubectl port-forward webflux-app-65754bdf9-ng2kj 8079:8090 ``
+
 
 
 
