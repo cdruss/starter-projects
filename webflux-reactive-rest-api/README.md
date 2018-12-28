@@ -63,6 +63,9 @@ A sample Dockerfile is included to build the app, its dependencies and the runti
 
 `` kubectl port-forward webflux-app-65754bdf9-ng2kj 8079:8090 ``
 
+kubectl delete service webflux-app
+kubectl delete deployment webflux-app
+
 
 
 
